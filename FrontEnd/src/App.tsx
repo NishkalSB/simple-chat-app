@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { SendIcon } from "./components/icons/SendIcon";
 
 function App() {
-  const [messages, setMessages] = useState(["hi there", "hello"]);
+  const [messages, setMessages] = useState<string[]>([]);
   const socketRef = useRef<WebSocket | null>(null);
   const messageRef = useRef<HTMLInputElement>(null);
 
@@ -50,7 +50,7 @@ function App() {
 
   return (
     <>
-      <div className="h-screen bg-black relative">
+      <div className="min-h-screen bg-black relative">
         <div className="h-[vh-85] p-5">
           {messages.map((message) => (
             <div className="m-8">
